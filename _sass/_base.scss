@@ -179,6 +179,38 @@ footer {
   }
 }
 
+.navbar {
+  font-size: $small-font-size;
+  color: $alt-text-color;
+
+  .biography {
+    padding-bottom: 1em;
+    border-bottom: 1px solid $subdued-border;
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-weight: bold;
+    letter-spacing: .15em;
+  }
+
+  a.fa {
+    color: lighten($text-color, 50%) !important;
+    margin-right: .25em;
+    margin-left: .25em;
+    margin-bottom: .8em;
+    transition: color 400ms;
+
+    &:hover {
+      color: $alt-color !important;
+      background-color: transparent !important;
+    }
+  }
+}
+
 .navigation_bar span { 
   font-size: 12pt;
   color: black;
