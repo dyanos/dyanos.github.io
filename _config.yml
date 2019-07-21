@@ -7,7 +7,7 @@ biography: "아직은 비밀!!"
 colophon: "Copyright © Sim, Sang-Jin<br>Content available under <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Commons (BY-NC-SA)</a> unless otherwise noted.<br>This site is hosted at <a href='https://pages.github.com/'>Github Pages</a> and created with <a href='http://jekyllrb.com/'>Jekyll</a>."
 
 baseurl: ""
-url: "http://dyanos.github.io"
+url: "https://dyanos.github.io"
 
 twitter_username: simsangjin
 github_username: dyanos
