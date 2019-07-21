@@ -11,8 +11,6 @@ description: Data Scientist, Developer, Amateur Physicst
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
 
-theme: jekyll-theme-minimal
-
 #
 # Flags below are optional
 #
@@ -20,11 +18,11 @@ theme: jekyll-theme-minimal
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email:
-  facebook: dyanos
+  email: dyanos@gmail.com
+  facebook: sim.sangjin
   flickr:
   github: dyanos
-  instagram:
+  instagram: dyanos
   linkedin: dyanos
   pinterest:
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
@@ -77,3 +75,5 @@ exclude:
     - LICENSE
     - README.md
     - CNAME
+
+theme: jekyll-theme-minimal
