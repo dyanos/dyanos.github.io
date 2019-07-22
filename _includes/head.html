@@ -20,8 +20,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
-  <script type="text/javascript">
-    window.MathJax = {
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
       tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
@@ -35,9 +38,15 @@
       CommonHTML: {
         scale: 90
       }
-    };
+    });
   </script>
-  <script type="text/javascript" async
-src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://use.fontawesome.com/4bee85bf94.js"></script>
+
+  {% if page.custom_css %} {% for css_file in page.custom_css %}
+  <link rel="stylesheet" href="/css/{{ css_file }}.css">
+  {% endfor %} {% endif %}
 </head>
