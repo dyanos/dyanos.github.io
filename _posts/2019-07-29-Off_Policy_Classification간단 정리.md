@@ -4,7 +4,7 @@ title: Off Policy Classifcation를 소개하는 페이지의 내용 분석
 date: 2019-07-29
 comments: true
 external-url: https://ai.googleblog.com/2019/06/off-policy-classification-new.html
-categories: 논문 간단 리뷰
+categories: "논문 리뷰"
 ---
 
 > Off Policy Classification?
