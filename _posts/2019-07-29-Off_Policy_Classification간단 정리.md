@@ -1,13 +1,16 @@
 ---
 layout: post
-title: Off Policy Classifcation를 소개하는 페이지의 내용 분석
+title: Off Policy Classifcation 소개글에 대한 짤막한 정리 글
 date: 2019-07-29
 comments: true
 external-url: https://ai.googleblog.com/2019/06/off-policy-classification-new.html
 categories: Review
 ---
 
-> Off Policy Classification?
+> Off Policy Classification? [Paper](https://arxiv.org/abs/1906.01624)
+
+* 논문은 아직 읽기 전입니다. 읽은 후 내용 추가할 예정입니다.
+* 본 내용은 googleblog에 있는 내용을 읽고 약간의 나름대로의 정리를 적어놓은 것입니다.
 
 >> In contrast, fully off-policy RL is a variant in which an agent learns entirely from older data, which is appealing because it enables model iteration without requiring a physical robot. With fully off-policy RL, one can train several models on the same fixed dataset collected by previous agents, then select the best one. However, fully off-policy RL comes with a catch: while training can occur without a real robot, evaluation of the models cannot.
 
@@ -39,3 +42,8 @@ action이 성공적인 결과를 이끌면, *effective*, 그렇지 않다면, *c
 
 >> However, the labeling of data from previous trials is only partial. For example, if a previous trial was a failure, we do not get negative labels because we do not know which action was the catastrophic one. To overcome this, we leverage techniques from semi-supervised learning, positive-unlabeled learning in particular, to get an estimate of classification accuracy from partially labeled data. This accuracy is the OPC score.
 
+단, 이전 시도로 만들어진 데이터를 가지고 effective인지 catastrophic인지를 평가하기에는 어렵다고 함. (중간도 있거나, 잘가다가 실패한 경우도 있으니). 이것을 극복하기 위해서 semi-supervised learning및 positive-unlabeled learning등을 동원하여 불확실성을 줄여나갈 것임(두 learning은 어떻게 사용되었는지는 논문을 봐야 하는 듯)
+
+> 느낀점
+
+bayesian optimization처럼 uncertainty를 계산할 수 있는 regression을 하고, 이를 통해서 meta-learning을 하는 방식과 유사하다고 보임. 
