@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Off Policy Classifcation 내용 간단 정리
+title: Off Policy Classifcation를 소개하는 페이지의 내용 분석
 date: 2019-07-29
 comments: true
 external-url: https://ai.googleblog.com/2019/06/off-policy-classification-new.html
@@ -26,4 +26,16 @@ off-policy evaluation (OPE)와 연관관계가 있어지만, 과거의 에이전
 여기서는 Off-policy classification(OPC)라는 것을 제안함. action에 대해서 성공 또는 실패를 라벨링하고, 이를 이용하여 에이전트의 성능을 평가하는 분류 모델을 만듦, 
 
 >> OPC relies on two assumptions: 1) that the final task has deterministic dynamics, i.e. no randomness is involved in how states change, and 2) that the agent either succeeds or fails at the end of each trial.
+
+OPC는 다음의 두가지 가정을 가지고 있다. 1. final task는 deterministic dynamics이다.(randomness가 상태 변화에 영향을 미치지 못한다.) 2. 성공 또는 실패가 있다.
+
+>> Because each trial will either succeed or fail in a deterministic way, we can assign binary classification labels to each action.  We say an action is effective if it could lead to success, and is catastrophic if it is guaranteed to lead to failure.
+
+action이 성공적인 결과를 이끌면, *effective*, 그렇지 않다면, *catastrophic*으로
+
+>> In our paper, we prove that the performance of an agent is measured by how often its chosen action is an effective action, which depends on how well the Q-function correctly classifies actions as effective vs. catastrophic. This classification accuracy acts as an off-policy evaluation score.
+
+이 논문에서는 만들어진 액션으로 에이전트의 성능을 평가하고, 이게 얼마나 좋은 측정량인지 증명할 것이다.
+
+>> However, the labeling of data from previous trials is only partial. For example, if a previous trial was a failure, we do not get negative labels because we do not know which action was the catastrophic one. To overcome this, we leverage techniques from semi-supervised learning, positive-unlabeled learning in particular, to get an estimate of classification accuracy from partially labeled data. This accuracy is the OPC score.
 
