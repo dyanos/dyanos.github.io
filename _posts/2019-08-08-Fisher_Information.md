@@ -9,6 +9,7 @@ categories: Statistics
 
 원본글1 [https://www.facebook.com/fisherinohio/posts/342873913320663]
 원본글2 [https://www.facebook.com/fisherinohio/posts/343193673288687]
+원본글3 [https://www.facebook.com/fisherinohio/posts/345653829709338]
 
 아래 내용은 원본글의 내용에서 핵심 문장으로 생각되는 것들을 그대로 옮겨온 것 입니다. 더 자세한 사항을 알고 싶으시면, 위 링크를 참조하세요!
 
