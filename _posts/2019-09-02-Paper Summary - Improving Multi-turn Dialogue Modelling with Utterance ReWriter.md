@@ -38,12 +38,12 @@ To get parallel training data for the sentence rewriting, **we crawled 200k cand
 *Coreference resolution* 동일 지시어 분석
 *Omission* 생략
 
-![0ACBFC97-B45E-42B1-9348-B7DB2595E6C1](images/0ACBFC97-B45E-42B1-9348-B7DB2595E6C1.png)
+![0ACBFC97-B45E-42B1-9348-B7DB2595E6C1](../images/0ACBFC97-B45E-42B1-9348-B7DB2595E6C1.png)
 
 ### all hidden information
 In the annotation process, human annotators need to identify these two situations then rewrite the utterance to cover all hidden information. 
 
-![395FD1C9-D797-4B60-9803-F4C0B58A700E](images/395FD1C9-D797-4B60-9803-F4C0B58A700E.png)
+![395FD1C9-D797-4B60-9803-F4C0B58A700E](../images/395FD1C9-D797-4B60-9803-F4C0B58A700E.png)
 
 Apart from the accuracy examination, the project manage is also required to 
 
@@ -86,7 +86,7 @@ where $I(w_i)$ is the input embedding.
 
 The word embedding $WE(w_i)$ and position embedding $PE(w_i)$ are the same as in normal Transformer architectures (Vaswani et al., 2017). 
 
-![image-20190829140233592](images/image-20190829140233592.png)
+![image-20190829140233592](../images/image-20190829140233592.png)
 
 Tokens from the same turn will share the same turn embedding.
 
@@ -188,7 +188,7 @@ CF) Pointer Network : https://www.slideshare.net/gyuhyeonNam/study-pointer-netwo
 
 Result : 
 
-![image-20190830144641341](images/image-20190830144641341.png)
+![image-20190830144641341](../images/image-20190830144641341.png)
 
 1) **Transformer-based models lead to significant improvement compare with LSTM-based counterparts.** This implies the self-attention mechanism is helpful in identifying coreferred and omitted information. More analysis on how it helps coreference resolu- tion can be seen in the next section. => Transformer가 LSTM보다 좋아요!!
 
@@ -204,19 +204,19 @@ Negative Sample : ReWriting할 필요가 없는 것
 
 
 
-![image-20190830144750262](images/image-20190830144750262.png)
+![image-20190830144750262](../images/image-20190830144750262.png)
 
 
 
 Result of Sentence ReWriting - Coreference Resolution
 
-![image-20190830144655136](images/image-20190830144655136.png)
+![image-20190830144655136](../images/image-20190830144655136.png)
 
 
 
 Result of Sentence ReWriting - Information Completion
 
-![image-20190830152506437](images/image-20190830152506437.png)
+![image-20190830152506437](../images/image-20190830152506437.png)
 
 - Similar as coreference resolution, we evaluate the quality of information completeness separately.
 - One omitted information is considered as properly completed if the rewritten utterance recovers the omitted words.
@@ -226,11 +226,11 @@ Result of Sentence ReWriting - Information Completion
 
 ### Integration Testing
 
-![image-20190830154214013](images/image-20190830154214013.png)
+![image-20190830154214013](../images/image-20190830154214013.png)
 
 
 
-![image-20190830154316317](images/image-20190830154316317.png)
+![image-20190830154316317](../images/image-20190830154316317.png)
 
 * CPS(conversation-turns-per-session) 
 
