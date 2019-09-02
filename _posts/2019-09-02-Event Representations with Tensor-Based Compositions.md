@@ -29,7 +29,7 @@ https://github.com/knowitall/ollie
 
 어떻게 Predicate와 Argument를 구할 것인가?? Embedding은...
 
-![image-20190830182038655](images/image-20190830182038655.png)
+![image-20190830182038655](../images/image-20190830182038655.png)
 
 Real??
 
@@ -39,5 +39,5 @@ Instead of additive models, we propose **tensor-based composition models**, <u>w
 
 ## Models: Tensor-based Event Composition
 
-![image-20190830182602545](images/image-20190830182602545.png)
+![image-20190830182602545](../images/image-20190830182602545.png)
 
