@@ -94,9 +94,9 @@ $L$ stacked encoders
 
 Each encoder contains a self-attention layer followed by a feedforward neural network.
 
-$\bold{E}^{(0)}=\left[ I(w_1),I(w_2),\cdots,I(w_m) \right]$
+$\mathbf{E}^{(0)}=\left[ I(w_1),I(w_2),\cdots,I(w_m) \right]$
 
-$\bold{E}^{(l)}=\mathrm{FNN}(\mathrm{MultiHead}(\bold{E}^{(l-1)},\bold{E}^{(l-1)},\bold{E}^{(l-1)}))$
+$\mathbf{E}^{(l)}=\mathrm{FNN}(\mathrm{MultiHead}(\mathbf{E}^{(l-1)},\mathbf{E}^{(l-1)},\mathbf{E}^{(l-1)}))$
 
 The final encodings are the output from the $L$th encoder $E(L)$.
 
@@ -104,21 +104,21 @@ The final encodings are the output from the $L$th encoder $E(L)$.
 
 The decoder also contains $L$ layers. The first sub-layer is a multi-head self-attention.
 
-$\bold{M}^l = \mathrm{MultiHead} (\bold{D}^{(l-1)}, \bold{D}^{(l-1)}, \bold{D}^{(l-1)})$
+$\mathbf{M}^l = \mathrm{MultiHead} (\mathbf{D}^{(l-1)}, \mathbf{D}^{(l-1)}, \mathbf{D}^{(l-1)})$
 
-$\bold{D}^{(0)}=R$
+$\mathbf{D}^{(0)}=R$
 
 The second sub-layer is encoder-decoder attention that integrates $E^{(L)}$ into the decoder.
 
 The encoded sequence $E^{(L)}$ obtained from the last section is split into $E^{(L)}_H$ (encodings of tokens from $H$) and $E^{(L)}_{U_n}$ (encodings of tokens from $U_n$)  then processed separately.
 
-$\bold{C}(H)^l = \mathrm{MultiHead}(\bold{M}^{(l)}, \bold{E}^{(L)}_{H}, \bold{E}^{(L)}_{H})$
+$\mathbf{C}(H)^l = \mathrm{MultiHead}(\mathbf{M}^{(l)}, \mathbf{E}^{(L)}_{H}, \mathbf{E}^{(L)}_{H})$
 
-$\bold{C}(U_n)^l = \mathrm{MultiHead}(\bold{M}^{(l)}, \bold{E}^{(L)}_{U_n}, \bold{E}^{(L)}_{U_n})$
+$\mathbf{C}(U_n)^l = \mathrm{MultiHead}(\mathbf{M}^{(l)}, \mathbf{E}^{(L)}_{U_n}, \mathbf{E}^{(L)}_{U_n})$
 
 The third sub-layer is a position-wise fully connected feed-forward neural network:
 
-$\bold{D}^{(l)}=\mathrm{FNN}\left(\left[ \bold{C}(H)^l \circ \bold{C}(U_n)^l \right]\right)$
+$\mathbf{D}^{(l)}=\mathrm{FNN}\left(\left[ \mathbf{C}(H)^l \circ \mathbf{C}(U_n)^l \right]\right)$
 
 where $\circ$ denotes vector concatenation.
 
@@ -126,17 +126,17 @@ where $\circ$ denotes vector concatenation.
 
 $p(R_t=w|H, U_n, R_{<t})=\lambda \sum_{i:(w_i = w) \wedge (w_i \in H)}􏰂 a_{t,i}+(1−\lambda) \sum_{j:(w_j = w) \wedge (w_j \in U_n)}􏰂 a^{′}_{t,j}$
 
-$a = \mathrm{Attention}\left(\bold{M}^{(L)}, \bold{E}^{(L)}_{U_n}\right)$
+$a = \mathrm{Attention}\left(\mathbf{M}^{(L)}, \mathbf{E}^{(L)}_{U_n}\right)$
 
-$a' = \mathrm{Attention}\left(\bold{M}^{(L)}, \bold{E}^{(L)}_{H}\right)$
+$a' = \mathrm{Attention}\left(\mathbf{M}^{(L)}, \mathbf{E}^{(L)}_{H}\right)$
 
-$\lambda=\sigma\left(\bold{w}_{d}^{\top} \bold{D}^{L}_{t} + \bold{w}^{\top}_{H} \bold{C}(H)^{L}_{t}+\bold{w}^{\top}_{U}\bold{C}(U_n)^L_{t} \right)$
+$\lambda=\sigma\left(\mathbf{w}_{d}^{\top} \mathbf{D}^{L}_{t} + \mathbf{w}^{\top}_{H} \mathbf{C}(H)^{L}_{t}+\mathbf{w}^{\top}_{U}\mathbf{C}(U_n)^L_{t} \right)$
 
 where
 
 (1) $a$ and $a'$ are the attention distribution over tokens in $H$ and $U_n$ respectively.
 
-(2) $\bold{w}_d$, $\bold{w}_H$ and $\bold{w}_{U}$ are parameters to be learned, 
+(2) $\mathbf{w}_d$, $\mathbf{w}_H$ and $\mathbf{w}_{U}$ are parameters to be learned, 
 
 (3) $\sigma$ is the sigmoid function to output a value between 0 and 1.
 
