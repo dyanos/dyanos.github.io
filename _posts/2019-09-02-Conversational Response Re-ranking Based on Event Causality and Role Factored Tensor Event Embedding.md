@@ -32,7 +32,7 @@ eg: be stressed out (cause) -> relieve stress (effect)
 
 
 
-![image-20190830165430174](images/image-20190830165430174.png)
+![image-20190830165430174](../images/image-20190830165430174.png)
 
 
 
@@ -60,7 +60,7 @@ Event causality pairs do not include all causalities in dialogue because they ar
 
 Finds a similar event causality pair on vector space.
 
-![image-20190830175307409](images/image-20190830175307409.png)
+![image-20190830175307409](../images/image-20190830175307409.png)
 
 
 
@@ -68,7 +68,7 @@ Finds a similar event causality pair on vector space.
 
 Converts events to distributed representations based on the relationship between a predicate and arguments.
 
-![image-20190830175716874](images/image-20190830175716874.png)
+![image-20190830175716874](../images/image-20190830175716874.png)
 
 
 
